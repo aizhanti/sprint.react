@@ -3,5 +3,9 @@ import _ from "lodash";
 import "../styles/upload.css";
 
 export default function Upload() {
-  return <div className="file-upload" />;
+  return (
+    <div className="file-upload">
+      <button>Upload</button>
+    </div>
+  );
 }
