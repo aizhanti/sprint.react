@@ -1,11 +1,8 @@
 import React from "react";
 import { getSingleObject } from "../utils";
-export default function SinglePhoto() {
+
+export default function SinglePhoto(prop) {
   return (
-    <img
-      src={"https://source.unsplash.com/random"}
-      alt="Single_Photo"
-      className="singlePhoto"
-    ></img>
+    <img src={prop.imgStr} alt="Single_Photo" className="singlePhoto"></img>
   );
 }

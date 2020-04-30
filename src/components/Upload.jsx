@@ -5,7 +5,7 @@ import "../styles/upload.css";
 export default function Upload() {
   return (
     <div className="file-upload">
-      <button>Upload</button>
+      <button className="button">Upload</button>
     </div>
   );
 }

@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import _ from "lodash";
 import { For } from "react-loops";
+import "../styles/styles.css";
 
-// function append(imgString) {
-//   return (
-//     <img
-//       src={`data:image/jpeg;base64,${imgString}`}
-//       alt="Single_Photo"
-//       className="singlePhoto"
-//     ></img>
-//   );
-// }
+// const allPhotoStr = allPhotoString.map(
+//   (pht) => "data:image/jpeg;base64," + pht,
+// );
 
 export default function AllPhotos(prop) {
-  // if (prop.photoString.length !== 0) {
-  const top20 = prop.photoString.slice(0, 20);
+  const top10 = prop.photoString.slice(0, 10);
   const imgArr = [];
-  top20.forEach(img => {
+  top10.forEach(str => {
+    let img = "data:image/jpeg;base64," + str;
     imgArr.push(
       <>
-        <img src={img} alt="our_image" />
+        <img
+          className="image imageCell"
+          src={img}
+          alt="awesome image"
+          onClick={e => {
+            prop.updateSelectedPhoto(e.target.src);
+          }}
+        />
       </>
     );
   });
-  return imgArr;
-  // }
+  console.log(prop.visibility);
+  return <div style={{ display: prop.visibility }}>{imgArr}</div>;
+  // return <div style={{ display: prop.visibility }}>imgArr</div>;
 }

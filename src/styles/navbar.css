@@ -8,4 +8,5 @@
 .navbar-header {
   cursor: pointer;
   margin-right: auto;
+  text-align: left;
 }
