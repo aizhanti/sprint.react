@@ -3,10 +3,6 @@ import _ from "lodash";
 import { For } from "react-loops";
 import "../styles/styles.css";
 
-// const allPhotoStr = allPhotoString.map(
-//   (pht) => "data:image/jpeg;base64," + pht,
-// );
-
 export default function AllPhotos(prop) {
   const top10 = prop.photoString.slice(0, 10);
   const imgArr = [];
@@ -27,5 +23,4 @@ export default function AllPhotos(prop) {
   });
   console.log(prop.visibility);
   return <div style={{ display: prop.visibility }}>{imgArr}</div>;
-  // return <div style={{ display: prop.visibility }}>imgArr</div>;
 }
