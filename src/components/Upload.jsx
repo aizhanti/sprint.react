@@ -1,11 +1,24 @@
-import React from "react";
-import _ from "lodash";
+import React, { createRef } from "react";
 import "../styles/upload.css";
 
-export default function Upload() {
+export default function Upload(prop) {
+  let someRef = createRef();
+
+  const openWindow = () => {
+    someRef.current.click();
+  };
   return (
-    <div className="file-upload">
-      <button className="button">Upload</button>
+    <div>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={e => {
+          prop.handleImageUpload(e);
+        }}
+        name="filename"
+        ref={someRef}
+      />
+      <button onClick={() => openWindow()}>Upload</button>
     </div>
   );
 }
