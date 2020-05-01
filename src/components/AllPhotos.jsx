@@ -1,19 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
-import _ from "lodash";
-import { For } from "react-loops";
+import React from "react";
 import "../styles/styles.css";
 
 export default function AllPhotos(prop) {
-  const top10 = prop.photoString.slice(0, 10);
   const imgArr = [];
-  top10.forEach(str => {
+  prop.photoString.forEach(str => {
     let img = "data:image/jpeg;base64," + str;
     imgArr.push(
       <>
         <img
           className="image imageCell"
           src={img}
-          alt="awesome image"
+          alt="awesome"
           onClick={e => {
             prop.updateSelectedPhoto(e.target.src);
           }}
